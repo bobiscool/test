@@ -111,11 +111,11 @@
             }else {
                 console.log("排序正常");
 //                console.log(temValue);
-//                _self.$set(_self,who,[]);
+                _self.$set(_self,who,['1','2','3','4']);
                 setTimeout(function () {
                   _self.$set(_self,who,temValue);
 //                  _self.$forceUpdate();
-                },1000);
+                },50);
 
             }
 
