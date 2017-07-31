@@ -54,6 +54,7 @@
                 "D",
                 "E",
               ],
+              devopListCollect:[],
               monitorList:[
                   '终端威胁监测',
                 "渠道监测"
@@ -98,7 +99,7 @@
             console.log(temValue);
             if(aIndex&&(aIndex>bIndex)){
                 alert("A流程必须在b流程之前执行！");
-                let _tem = _self[who];
+                let _tem = _self.devopListCollect;
 
 //                console.log(_self[who]);
               /**
@@ -110,12 +111,8 @@
               },100);
             }else {
                 console.log("排序正常");
-//                console.log(temValue);
-                _self.$set(_self,who,['1','2','3','4']);
-                setTimeout(function () {
-                  _self.$set(_self,who,temValue);
-//                  _self.$forceUpdate();
-                },50);
+                //排序正常就 不刷新  继续收集
+                  _self.$set(_self,'devopListCollect',temValue);
 
             }
 
@@ -127,6 +124,11 @@
           },
           checkFunc:function () {
 
+          }
+        },
+        watch:{
+          developListTem:function (val) {
+            console.log("有更改",val);
           }
         },
         mounted: function () {
@@ -142,7 +144,7 @@
           });
 
           _self.developSort = Sortable.create(_self.$refs.develop,{
-//            animation:150,
+            animation:150,
             ghostClass:"sortable-ghost",
             chosenClass:"sortable-chosen",
             dragClass: "sortable-drag",
