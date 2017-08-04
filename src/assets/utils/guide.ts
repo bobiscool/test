@@ -2,7 +2,7 @@
  * Created by mac WuYiPing on 17/8/4.
  */
 
-class guide {
+class Guide {
 
   highlightEle:HTMLDivElement;
   mask:HTMLDivElement;
