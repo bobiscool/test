@@ -1,13 +1,23 @@
 /**
  * Created by mac WuYiPing on 17/8/4.
  */
-import _ from "lodash"
 
 export const newUser = {
   highlightEle:null,
   mask:null,
   element:null,
   //特别注意 这种 带简单数据的 就不要 放到 vue 里面的methods里面了 不然this指向不清楚
+  init:function (ele) {
+    var _self = this;
+    _self.copyElement(ele);
+    _self.createDiv();
+  },
+  show:function () {
+    this.mask.style.display="block";
+  },
+  hide:function () {
+    this.mask.style.display="none";
+  },
   copyElement:function (ele) {
     this.element=ele;
     let _tem = ele.getBoundingClientRect();
@@ -43,5 +53,15 @@ export const newUser = {
       _self.copyElement(_self.element);
 
     }
+  },
+  /**
+   *
+   * @param tipElement 需要传入 一个 完整htmlElement
+   */
+  addTip:function (tipElement) {
+    // 添加个性化 说明
+  },
+  addText:function (text) {
+    // 如果没有 tipEle那就退而求其次 转向说明
   }
 }

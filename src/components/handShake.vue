@@ -3,6 +3,10 @@
 
   <div class="big">
     <span class="some" id="newUser">新手引导</span>
+    <span class="some">新手引导</span>
+    <span class="some" id="newUser3">新手引导</span>
+
+    <img  id="newUser2" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3961207246,4105016695&fm=26&gp=0.jpg">
     <span class="handS"></span>
   </div>
 </template>
@@ -49,7 +53,7 @@
       }
 
 
-      newUser.copyElement(document.getElementById("newUser"))
+      newUser.copyElement(document.getElementById("newUser2"))
 
       newUser.createDiv();
 
@@ -109,5 +113,9 @@
     top:0;
     left:0px;
     background: #42b983;
+  }
+
+  #newUser2 {
+    left: 300px;
   }
 </style>
