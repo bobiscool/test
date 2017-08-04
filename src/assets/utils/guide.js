@@ -2,7 +2,7 @@
  * Created by mac WuYiPing on 17/8/4.
  */
 var guide = (function () {
-    //特别注意 这种 带简单数据的 就不要 放到 vue 里面的methods里面了 不然this指向不清楚
+    //特别注意 这种 带简单数据的 就不要 放到 vue 里面的methods里面了 不然this指向不清楚  
     function guide(ele) {
         var _self = this;
         _self.copyElement(ele);
