@@ -6,7 +6,7 @@
        </ul>
        <ul ref="develop" v-cloak>
          <li v-for="(item,index) in developListTem">
-          <span class="value"> {{item}}</span></span> <span class="del" @click="deleteSort('developListTem',index)">X</span>
+          <span class="value"> {{item}}</span> <span class="del" @click="deleteSort('developListTem',index)">X</span>
          </li>
        </ul>
        <ul ref="public"></ul>
@@ -96,10 +96,10 @@
               return value=="B";
             });
 
-            console.log(temValue);
-            if(aIndex&&(aIndex>bIndex)){
+            console.log(bIndex);
+            if(aIndex!=-1&&bIndex!=-1&&(aIndex>bIndex)){
                 alert("A流程必须在b流程之前执行！");
-                let _tem = _self.devopListCollect;
+                let _tem = _self.developListTem;
 
 //                console.log(_self[who]);
               /**
@@ -135,13 +135,13 @@
 
             //TODO 函数执行区域
           var _self = this;
-          _self.designSort = Sortable.create(_self.$refs.design,{
-              animation:150,
-            ghostClass:"sortable-ghost",
-            chosenClass:"sortable-chosen",
-            dragClass: "sortable-drag",
-            onEnd:_self.checkIndex
-          });
+//          _self.designSort = Sortable.create(_self.$refs.design,{
+//              animation:150,
+//            ghostClass:"sortable-ghost",
+//            chosenClass:"sortable-chosen",
+//            dragClass: "sortable-drag",
+//            onEnd:_self.checkIndex
+//          });
 
           _self.developSort = Sortable.create(_self.$refs.develop,{
             animation:150,
